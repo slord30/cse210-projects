@@ -5,12 +5,12 @@ class Program
     static void Main(string[] args)
     {
 
-        // Ask user for their grade percentage to figure out what grade they received in the class. Print the letter grade. //
+        // Ask user for their grade percentage to figure out what grade they received in the class. Print the letter grade. 
         Console.Write("What is your grade percentage? ");
         string userAnswer = Console.ReadLine();
         int grade = int.Parse(userAnswer);
 
-        // create a variable called "letter" to assign the letter grade to //
+        // create a variable called "letter" to assign the letter grade to 
         string letter = "";
 
         if (grade >= 90)
@@ -34,10 +34,10 @@ class Program
             letter = "F";
         }
 
-        // Print the letter the student got to the screen //
+        // Print the letter the student got to the screen 
         Console.WriteLine($"Your grade is: {letter}"); 
 
-        // Check to see if the student passed the class. Student must get a 70 or higher to pass. Print to screen if student passed or did not pass. //
+        // Check to see if the student passed the class. Student must get a 70 or higher to pass. Print to screen if student passed or did not pass. 
         if (grade >= 70)
         {
             Console.WriteLine("Congratulations! you passed the class.");
@@ -48,8 +48,8 @@ class Program
         }
 
 
-//First part of assignment before creating variable "letter" //
-        // // Ask user for their grade percentage to figure out what grade they received in the class. Print the letter grade. //
+//First part of assignment before creating variable "letter" 
+        // // Ask user for their grade percentage to figure out what grade they received in the class. Print the letter grade. 
         // Console.Write("What is your grade percentage? ");
         // string userAnswer = Console.ReadLine();
         // int grade = int.Parse(userAnswer);
@@ -75,7 +75,7 @@ class Program
         //     Console.WriteLine("Your grade is: F");
         // }
 
-        // // Check to see if the student passed the class. Student must get a 70 or higher to pass. Print to screen if student passed or did not pass. //
+        // // Check to see if the student passed the class. Student must get a 70 or higher to pass. Print to screen if student passed or did not pass. 
         // if (grade >= 70)
         // {
         //     Console.WriteLine("Congratulations! you passed the class.");
