@@ -1,0 +1,35 @@
+For loops are designed for counting (iterating)
+Can have the variable inside the loop - most of the time you must declare the variable outside fot he loop
+
+3 components:
+for (
+    int i = 0; //intialize or set up the loop
+    i < length; //conditional, what will keep the loop looping until the condition is met
+    i ++; //iteration or increment, how do we keep moving forward
+)
+{
+    DO THE THING
+}
+
+How it is written:
+for (int i = 0; i < 5; i ++)
+{
+    Console.WriteLine(i);
+}
+
+This code will also acheive the same goal, but is not used often in this circumstance (iterating)
+int counter = 0;
+do //do loop will always execute once before looking for the conditional
+{
+    Console.WriteLine(counter);
+    counter ++;
+}
+while(counter < 5);
+
+-OR-
+int counter = 0;
+while(counter < 5)
+{
+    Console.WriteLine(counter < 5);
+    counter ++;
+}

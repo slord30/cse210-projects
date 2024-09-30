@@ -1,0 +1,93 @@
+List<string> names = new List<string>
+-or- you can use var when the right side of the = is obvious to the computer to know what type is being used ie: string, int, float, List, etc.
+var names = new List<string>
+
+var names = new List<string> {"Sarah", "Brian", "Jackson"};
+foreach (var name in names)
+{
+    Console.WriteLine($"Hello {name.ToUpper}!");
+}
+
+returns: 
+Hello SARAH!
+Hello BRIAN!
+Hello JACKSON!
+
+-OR-
+for (int i = 0; i < names.Count; i ++)
+{
+    Console.WriteLine($"Hello {names.ToUpper}!");
+}
+
+returns the same thing as first example
+
+*************ADD*************
+
+var names = new List<string> {"Sarah", "Brian", "Jackson"};
+names.Add("Connor");
+names.Add("Tessa");
+names.Add("Zoey");
+
+foreach (var name in names)
+{
+    Console.WriteLine($"Hello {name.ToUpper}!");
+}
+
+returns: 
+Hello SARAH!
+Hello BRIAN!
+Hello JACKSON!
+Hello CONNOR!
+Hello TESSA!
+Hello ZOEY!
+
+*************INDEXING***************
+
+Console.WriteLine(names[0]);  //returns Sarah - the first name in the List, indexed to 0
+Console.WriteLine(names[2]); //returns Jackson - the name indexed to 2
+Console.WriteLine(names [names.Count - 1]); //returns the last name in the list (Zoey)
+Console.WriteLine(names [names.Count - 2]); //returns the second to last name in the list (Tessa)
+
+
+***********RANGE***************
+foreach (var name in names[2..4]);
+{
+    ConsoleWriteLine(name)
+}
+
+**************SORTING***************
+var names = new List<string> {"Sarah", "Brian", "Jackson"};
+
+names.Sort();
+
+foreach (var name in names)
+{
+    Console.WriteLine($"Hello {name.ToUpper}!");
+}
+
+returns the names sorted alphabetically
+
+var numbers = new List<int> {45,50,92,75,62,48};
+
+Console.WriteLine($"I found 92 at index {numbers.IndexOf(92)}");  //watch how 92 will change it's index after it gets sorted
+numbers.Sort()
+Console.WriteLine($"I found 92 at index {numbers.IndexOf(92)}");
+
+foreach (int number in numbers)
+{
+    Console.WriteLine(number);
+}
+
+
+
+*********ARRAYS**************
+//arrays are like having a line of buckets with one thing in each buckets
+//can use foreach to enumerate or count each item
+var names = new string[] {"Sarah", "Brian", "Jackson"};
+
+names = [..names, "Connor"]; //add to array
+
+foreach (var name in names)
+{
+    Console.WriteLine($"Hello {name.ToUpper}!");
+}

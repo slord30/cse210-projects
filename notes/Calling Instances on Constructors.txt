@@ -1,0 +1,55 @@
+using System;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        //Creating instances for the constructors
+        Fraction f1 = new Fraction(1, 1);
+        Fraction f2 = new Fraction(6, 1);
+        Fraction f3 = new Fraction(6, 7);
+
+        //calling the ReturnFraction method to print to console
+        f1.ReturnFraction();
+        f2.ReturnFraction();
+        f3.ReturnFraction();
+    }
+
+}
+
+
+using System;
+
+public class Fraction
+{
+    //Fraction class has two private attributes for the top and bottom numbers
+    private int _top;
+    private int _bottom;
+
+    //Create constructor that has no parameters and initializes the top and bottom numbers to 1
+    public Fraction()
+    {
+        _top = 1;
+        _bottom = 1;
+    }
+
+    //Create constructor that has one parameter for the top and initializes the bottom number to 1
+    public Fraction(int top)
+    {
+        _top = top;
+        _bottom = 1;
+    }
+
+    //Create constructor that has two parameters, one for the top and one for the bottom
+    public Fraction(int top, int bottom)
+    {
+        _top = top;
+        _bottom = bottom;
+    }
+
+    //Create class to return fractions
+    public void ReturnFraction()
+    {
+        Console.WriteLine($"{_top}/{_bottom}");
+    }
+}
