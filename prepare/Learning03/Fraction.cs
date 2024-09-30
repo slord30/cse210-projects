@@ -42,10 +42,4 @@ public class Fraction
     {
         return _top / (double)_bottom;
     }
-
-
-    // public void ReturnFraction()
-    // {
-    //     Console.WriteLine($"{_top}/{_bottom}");
-    // }
 }
