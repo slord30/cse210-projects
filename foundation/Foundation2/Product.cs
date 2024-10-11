@@ -1,4 +1,5 @@
 using System;
+using System.Numerics;
 
 public class Product
 {
@@ -17,7 +18,9 @@ public class Product
 
     public double GetTotalPrice()
     {
-        return _price * _quantity;
+        double totalPrice = _price * _quantity;
+        double roundedPrice = Math.Round(totalPrice, 2);
+        return roundedPrice;
     }
 
     public string GetName()
