@@ -13,7 +13,7 @@ class Program
         Product p102 = new Product("Gothic Mystery Witch Earrings", "GWE02", 9.95, 2);
         Product p103 = new Product("Outdoor Planter Large Pot", "OP250", 75.06, 1);
 
-        productList1.Add(p102);
+        productList1.Add(p101);
         productList1.Add(p102);
         productList1.Add(p103);
 
@@ -43,7 +43,7 @@ class Program
         Console.WriteLine();
 
         //Order 3
-        Address address3 = new Address("5 Senores", "Oaxaca De Juarez", "Oaxaca", "Mexico");
+        Address address3 = new Address("15 Senores Guerrero", "Oaxaca De Juarez", "Oaxaca", "Mexico");
         Customer customer3 = new Customer("Jackson Lord", address3);
         List<Product> productList3 = new List<Product>();
 
