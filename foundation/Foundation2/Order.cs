@@ -38,7 +38,7 @@ public class Order
         string packingLabel = "Packing Label: \n";
         foreach (Product p in _products)
         {
-             packingLabel += $"{p.GetName()} - {p.GetProductID()} \n";
+             packingLabel += $"{p.GetName()} ({p.GetProductID()}) \n";
         }
         return packingLabel;
     }
@@ -56,7 +56,7 @@ public class Order
         double totalPrice = TotalOrderCost();
         foreach (Product p in _products)
         {
-            totalCost += $"{p.GetName()} {p.GetProductID} - ${p.GetPrice} x {p.GetQuantity} = {p.GetTotalPrice} \n";
+            totalCost += p.GetName() + " (" + p.GetProductID() + ") : " + "$" + p.GetPrice() + " x " + p.GetQuantity() + " = " + "$" + p.GetTotalPrice() + "\n";
         }
 
         totalCost += $"Shipping Cost: ${CalcShipping()} \n";
