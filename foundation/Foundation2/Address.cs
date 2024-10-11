@@ -31,7 +31,7 @@ public class Address
 
     public string CombineAddress()
     {
-        string address = $"{_street},\n{_city}, {_state}, {_country}";
+        string address = $"{_street} \n{_city}, {_state}, {_country}";
         return address;
     }
 }
