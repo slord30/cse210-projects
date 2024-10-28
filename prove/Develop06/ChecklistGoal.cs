@@ -12,7 +12,7 @@ public class ChecklistGoal : Goal
 
 
     //Constructors
-    public ChecklistGoal(string type, string name, string description, int points, int amountCompleted, int bonus) : base(type, name, description, points)
+    public ChecklistGoal(string type, string name, string description, int points, int bonus, int amountCompleted) : base(type, name, description, points)
     {
         _isComplete = false;
         _amountCompleted = amountCompleted;
@@ -20,7 +20,7 @@ public class ChecklistGoal : Goal
         _target = 0;
     }
 
-    public ChecklistGoal(string type, string name, string description, int points, bool status, int bonus, int target, int amountCompleted) : base(type, name, description, points)
+    public ChecklistGoal(string type, string name, string description, int points, bool status, int bonus, int amountCompleted, int target) : base(type, name, description, points)
     {
         _isComplete = status;
         _amountCompleted = amountCompleted;
@@ -42,7 +42,7 @@ public class ChecklistGoal : Goal
     }
     public void SetAmountCompleted()
     {
-
+        _amountCompleted += _amountCompleted;
     }
     public int GetBonus()
     {
@@ -54,11 +54,11 @@ public class ChecklistGoal : Goal
     {
         if (IsComplete() == false)
         {
-            Console.WriteLine($"{i}. [ ] {GetGoalName} ({GetDescription}) -- Currently Completed: {GetAmountCompleted}/{GetTarget}");
+            Console.WriteLine($"{i}. [ ] {GetGoalName()} ({GetDescription()}) -- Currently Completed: {GetTarget()}/{GetAmountCompleted()}");
         }
         else if (IsComplete() == true)
         {
-            Console.WriteLine($"{i}. [X] {GetGoalName} ({GetDescription}) -- Completed: {GetAmountCompleted}/{GetTarget}");
+            Console.WriteLine($"{i}. [X] {GetGoalName()} ({GetDescription()}) -- Completed: {GetAmountCompleted()}/{GetTarget()}");
         }
     }
 
@@ -72,11 +72,11 @@ public class ChecklistGoal : Goal
             _isComplete = true;
             points = points + _bonus;
 
-            Console.WriteLine($"Congratulations! You have earned {points} points!");
+            Console.WriteLine($"Congratulations! You have earned {GetPoints()} points!");
         }
         else
         {
-            Console.WriteLine($"Congratulations! You have earned {GetPoints} points!");
+            Console.WriteLine($"Congratulations! You have earned {GetPoints()} points!");
         }
     }
 
