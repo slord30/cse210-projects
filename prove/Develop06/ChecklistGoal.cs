@@ -10,7 +10,6 @@ public class ChecklistGoal : Goal
     private int _target;
     private bool _isComplete;
 
-
     //Constructors
     public ChecklistGoal(string type, string name, string description, int points, int bonus, int amountCompleted) : base(type, name, description, points)
     {
@@ -34,7 +33,7 @@ public class ChecklistGoal : Goal
     }
     public void SetTarget()
     {
-        _target += _target;
+
     }
     public int GetAmountCompleted()
     {
@@ -58,26 +57,29 @@ public class ChecklistGoal : Goal
         }
         else if (IsComplete() == true)
         {
-            Console.WriteLine($"{i}. [X] {GetGoalName()} ({GetDescription()}) -- Completed: {GetAmountCompleted()}/{GetTarget()}");
+            Console.WriteLine($"{i}. [X] {GetGoalName()} ({GetDescription()}) -- Completed: {GetTarget()}/{GetAmountCompleted()}");
         }
     }
 
     public override void RecordEvent(List<Goal> goals)
     {
         SetTarget();
+        _target++;
         int points = GetPoints();
+        int bonus = GetBonus();
 
         if (_target == _amountCompleted)
         {
             _isComplete = true;
-            points = points + _bonus;
-
-            Console.WriteLine($"Congratulations! You have earned {GetPoints()} points!");
+            points = points + bonus;
+            
+            Console.WriteLine($"Congratulations! You have earned {GetPoints()} points and {GetBonus()} bonus points!");
         }
         else
         {
             Console.WriteLine($"Congratulations! You have earned {GetPoints()} points!");
         }
+        Console.WriteLine($"You now have {points} points.");
     }
 
     //method should return true if goal is complete.
